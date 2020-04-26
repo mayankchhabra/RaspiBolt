@@ -1,18 +1,28 @@
 ---
 layout: default
 title: Bonus Section
-nav_order: 7
+nav_order: 60
 has_children: true
 has_toc: false
 ---
+<!-- markdownlint-disable MD014 MD022 MD025 MD033 MD036 MD040 -->
+
 # Bonus Section
 {: .no_toc }
 
+---
+
+🚨 This section has not been updated to **RaspiBolt v2** yet.
+There might be some inconsistencies with the updated configuration, so handle with care!
+
+---
 ## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
+
+---
 
 In this section, you can find various optional topics that make your RaspiBolt running even smoother. I split this up in various subsections, as the individual tasks can be quite long.
 
@@ -35,14 +45,17 @@ Manually unlocking the LND wallet every time the system starts is not really fea
 *Difficulty: medium*
 
 Route all your Bitcoin traffic over the Tor network to stay anonymous and avoid leaking private information like your public IP address.
+Only for older configurations, the latest RaspiBolt v2 has this already enabled by default.
 
 [![Tor](images/69_tor.png)](raspibolt_69_tor.md)
 
 ## [Electrum Personal Server](raspibolt_64_electrum.md)
 
-*Difficulty: intermediate*
+*Difficulty: medium*
 
-The RaspiBolt is the perfect trustless Bitcoin backend for your regular on-chain transactions. Together with the Electrum wallet, it works even with your Ledger or Trezor hardware wallet.
+The RaspiBolt is the perfect trustless Bitcoin backend for your regular on-chain transactions.
+Together with the Electrum wallet, it works even with your Ledger or Trezor hardware wallet.
+Mostly for older configurations, the latest RaspiBolt v2 already has a full Electrum server included by default.
 
 [![Electrum](images/60_eps_electrumwallet.png)](raspibolt_64_electrum.md)
 
@@ -64,7 +77,7 @@ The Zap iOS app (https://zap.jackmallers.com) provides a neat interface for the 
 
 ## [Shango Mobile Wallet](raspibolt_68_shango.md)
 
-*Difficulty: intermediate*
+*Difficulty: medium*
 
 The iOS & Android app Shango provides a neat interface for the RaspiBolt, to manage peers & channels, make payments and create invoices.
 
@@ -96,7 +109,7 @@ Control your Lightning node from a different computer within you network, eg. fr
 
 Difficulty: easy
 
-In case your SD card gets corrupted or you brick your node, it's handy to have a quick recovery image at hand. It's not a full backup solution, but allows a system recovery.
+In case your microSD card gets corrupted or you brick your node, it's handy to have a quick recovery image at hand. It's not a full backup solution, but allows a system recovery.
 
 ## [Additional scripts: show balance & channels](raspibolt_67_additional-scripts.md)
 
@@ -104,14 +117,25 @@ Difficulty: easy
 
 These additional bash scripts display a balance overview (on-chain & in channels, active & inactive) as well as a nicely formatted channels overview.
 
-## Even more Extras 
+## JoinMarket
+
+*Difficulty: advanced*
+
+[JoinMarket](https://github.com/JoinMarket-Org/joinmarket-clientserver) is a CoinJoin software, which allows you to increase privacy and fungibility of on-chain Bitcoin transactions. It includes it's own Bitcoin wallet, backed by `bitcoind`, and uses market maker / market taker model, which means that either you pay small fee for having CoinJoin privacy fast (taker) or just keep software running and then you get paid for providing liquidity for CoinJoin's, in addition gaining privacy in a longer periods of time (maker). 
+
+Even if you aren't interested in privacy of your coins, you can use JoinMarket for some little passive income from your bitcoins, without giving up your private keys.
+
+**[JoinMarket on RaspiBolt](https://github.com/kristapsk/raspibolt-extras/blob/master/joinmarket.md)** by Kristaps Kaupe
+
+## Even more Extras
 
 **[RaspiBolt-Extras](https://github.com/robclark56/RaspiBolt-Extras/blob/master/README.md)** by Rob Clark
+
 * Lights-Out: automatic unlocking of wallet and dynamic ip
 * RaspiBoltDuo: testnet & mainnet running simultaneously
 * Using REST access
 * Receiving Lightning payments: automatically create invoices / qr codes
 
-------
+---
 
 Next: [Troubleshooting](raspibolt_70_troubleshooting.md) >>
